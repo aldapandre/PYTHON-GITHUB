@@ -8,62 +8,63 @@ def localizar(texto, caractere):
 
 def desenho_forca(tentativas):
     estagios = [
-                """
-                   -----
-                   |   |
-                       |
-                       |
-                       |
-                       |
-                """,
-                """
-                   -----
-                   |   |
-                   O   |
-                       |
-                       |
-                       |
-                """,
-                """
-                   -----
-                   |   |
-                   O   |
-                   |   |
-                       |
-                       |
-                """,
-                """
-                   -----
-                   |   |
-                   O   |
-                  /|   |
-                       |
-                       |
-                """,
-                """
-                   -----
-                   |   |
-                   O   |
-                  /|\  |
-                       |
-                       |
-                """,
-                """
-                   -----
-                   |   |
-                   O   |
-                  /|\  |
-                  /    |
-                       |
-                """,
-                """
-                   -----
-                   |   |
-                   O   |
-                  /|\  |
-                  / \  |
-                       |
-                """]
+        """
+           -----
+           |   |
+               |
+               |
+               |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+               |
+               |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+           |   |
+               |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|   |
+               |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|\  |
+               |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|\  |
+          /    |
+               |
+        """,
+        """
+           -----
+           |   |
+           O   |
+          /|\  |
+          / \  |
+               |
+        """
+    ]
     return estagios[tentativas]
 
 def obter_caractere(caracteres_usados):
@@ -92,7 +93,7 @@ def jogo_da_forca():
     }
 
     tema = random.choice(list(temas.keys()))
-    print(f'----- ADIVINHE O NOME DE UM(A) {tema.upper()} -----\\n')
+    print(f'----- ADIVINHE O NOME DE UM(A) {tema.upper()} -----\n')
 
     palavra = palavra_aleatoria(temas[tema])
     print(f'DICA: {dicas[tema]} A palavra tem {len(palavra)} caracteres')
@@ -105,8 +106,8 @@ def jogo_da_forca():
     while not fim_do_jogo:
         print(desenho_forca(tentativas))
         print(f'Caracteres usados: {", ".join(caracteres_usados)}')
-        print(' '.join(pal_secreta))
-        
+        print(' '.join(pal_secreta))  # Parêntese de fechamento estava faltando aqui
+
         caractere_digitado = obter_caractere(caracteres_usados)
         caracteres_usados.append(caractere_digitado)
 
@@ -127,5 +128,8 @@ def jogo_da_forca():
             fim_do_jogo = True
             print("Você perdeu!")
             print(f"A palavra era {palavra}")
+
+    # Adicione o link para o GitHub
+    print("\nPara dar seu feedback e contribuir com o código, acesse: https://github.com/aldapandre/PYTHON-GITHUB/tree/main")
 
 jogo_da_forca()
