@@ -4,6 +4,7 @@
 `DISCIPLINA` Suporte ao Usuário
 
 `MÓDULO` Terceiro Módulo
+
 Jogo da Forca desenvolvido em Python para uma atividade do curso Técnico em Informática no Grau Técnico.
 
 ## Integrantes
